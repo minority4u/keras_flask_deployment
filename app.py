@@ -8,6 +8,7 @@
 #for you automatically.
 #requests are objects that flask handles (get set post, etc)
 from flask import Flask, render_template,request
+from flask import jsonify
 #scientific computing library for saving, reading, and resizing images
 from scipy.misc import imsave, imread, imresize
 #for matrix math
@@ -38,7 +39,7 @@ import base64
 #decoding an image from base64 into raw representation
 def convertImage(imgData1):
 	imgstr = re.search(b'base64,(.*)',imgData1).group(1)
-	print(imgstr)
+	#print(imgstr)
 	with open('output.png','wb') as output:
 		#output.write(imgstr.decode('base64'))
 		output.write(base64.b64decode(imgstr))
@@ -49,6 +50,12 @@ def index():
 	#initModel()
 	#render out pre-built HTML file right on the index page
 	return render_template("index.html")
+
+@app.route('/update/', methods=['GET','POST'])
+def update_model():
+	print('reloading model and graph')
+	model, graph = init()
+	return jsonify({'update model': 'success'})
 
 @app.route('/predict/',methods=['GET','POST'])
 def predict():
@@ -74,7 +81,7 @@ def predict():
 	with graph.as_default():
 		#perform the prediction
 		out = model.predict(x)
-		print(out)
+		#print(out)
 		print(np.argmax(out,axis=1))
 		print("debug3")
 		#convert the response to a string

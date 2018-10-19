@@ -1,10 +1,12 @@
-
+.git
 data
 docs
+models
 notebooks
 reports
 venv
 *.env
 *.gitignore
-*.git
+test*
+
 *Makefile

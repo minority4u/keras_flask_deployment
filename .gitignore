@@ -83,3 +83,4 @@ target/
 venv/
 venv\
 *.env
+output.png
