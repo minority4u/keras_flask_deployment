@@ -5,4 +5,4 @@ keras
 numpy
 h5py
 pillow
-tensorflow==1.5.0
+tensorflow
