@@ -1,0 +1,10 @@
+
+data
+docs
+notebooks
+reports
+venv
+*.env
+*.gitignore
+*.git
+*Makefile
