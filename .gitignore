@@ -82,3 +82,4 @@ target/
 .DS_Store
 venv/
 venv\
+*.env
