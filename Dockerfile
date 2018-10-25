@@ -1,5 +1,5 @@
 FROM python:3.6
-COPY . /code
+COPY src/app /code
 COPY requirements.txt /temp/
 WORKDIR /code
 #RUN pip install --upgrade pip setuptools wheel

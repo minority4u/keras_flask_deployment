@@ -23,7 +23,7 @@ import sys
 #for reading operating system data
 import os
 #tell our app where our saved model is
-sys.path.append(os.path.abspath("./models"))
+sys.path.append(os.path.abspath("."))
 from models.load import *
 #initalize our flask app
 app = Flask(__name__)

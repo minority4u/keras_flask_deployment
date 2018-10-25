@@ -22,9 +22,6 @@ endif
 
 ## Install Python Dependencies
 requirements: test_environment
-	pip install virtualenv
-	virtualenv venv
-	source $(PROJECT_DIR)/venv/bin/activate
 	pip install -U pip setuptools wheel
 	pip install -r requirements.txt
 
@@ -62,7 +59,7 @@ create_environment:
 ifeq (True,$(HAS_CONDA))
 		@echo ">>> Detected conda, creating conda environment."
 ifeq (3,$(findstring 3,$(PYTHON_INTERPRETER)))
-	conda create --name $(PROJECT_NAME) python=3
+	conda create --name $(PROJECT_NAME) python=3.6
 else
 	conda create --name $(PROJECT_NAME) python=2.7
 endif
