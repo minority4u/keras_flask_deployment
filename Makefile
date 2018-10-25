@@ -22,8 +22,17 @@ endif
 
 ## Install Python Dependencies
 requirements: test_environment
-	pip install -U pip setuptools wheel
-	pip install -r requirements.txt
+	pip install virtualenv
+	virtualenv venv
+	. venv/bin/activate ; \
+	venv/bin/pip install -U pip setuptools wheel
+	venv/bin/pip install -r requirements.txt
+
+
+## setup, activate and deploy locally
+run: requirements
+	. venv/bin/activate ; \
+	python src/app/app.py
 
 ## Make Dataset
 data: requirements
