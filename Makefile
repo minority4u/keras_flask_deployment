@@ -20,6 +20,11 @@ endif
 # COMMANDS                                                                      #
 #################################################################################
 
+## Train new model
+train: requirements
+	. venv/bin/activate ; \
+	python src/models/train_model.py
+
 ## Install Python Dependencies
 requirements: test_environment
 	pip install virtualenv
@@ -29,7 +34,7 @@ requirements: test_environment
 	venv/bin/pip install -r requirements.txt
 
 
-## setup, activate and deploy locally
+## setup, activate and deploy flask locally
 run: requirements
 	. venv/bin/activate ; \
 	python src/app/app.py
