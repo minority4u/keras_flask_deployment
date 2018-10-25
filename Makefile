@@ -22,9 +22,9 @@ endif
 
 ## Install Python Dependencies
 requirements: test_environment
-    pip install virtualenv
-    virtualenv venv
-    source venv/bin/activate
+	pip install virtualenv
+	virtualenv venv
+	source $(PROJECT_DIR)/venv/bin/activate
 	pip install -U pip setuptools wheel
 	pip install -r requirements.txt
 
