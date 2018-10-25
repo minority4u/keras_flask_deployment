@@ -1,7 +1,7 @@
 FROM python:3.6
 COPY . /code
+COPY requirements.txt /temp/
 WORKDIR /code
-#RUN ls -R models/ && ls -R notebooks/
 #RUN pip install --upgrade pip setuptools wheel
-RUN pip install -r requirements.txt --no-cache-dir
-CMD ["python", "app.py"]
+RUN pip install -r /temp/requirements.txt --no-cache-dir
+CMD ["python", "/code/src/app/app.py"]
