@@ -1,7 +1,6 @@
 .git
 data
 docs
-models
 notebooks
 reports
 venv
