@@ -90,3 +90,8 @@ output.png
 *.c
 *.h
 output.png
+
+
+# Exclude model files
+*.h5
+*.json
