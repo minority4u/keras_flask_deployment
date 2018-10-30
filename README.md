@@ -54,7 +54,7 @@ Project Organization
 
 --------
 
-Contribs
+Credits
 ------------
 
 
@@ -115,7 +115,7 @@ cd keras_flask_deployment
 ```
 - Create and run Docker-Container
 ```
-docker-compose -up docker-compose.yml
+docker-compose -up
 ```
 
 
